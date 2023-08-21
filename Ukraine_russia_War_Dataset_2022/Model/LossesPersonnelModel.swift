@@ -7,20 +7,15 @@
 
 import Foundation
 
-struct LossesPersonnelModel : Identifiable {
+struct LossesPersonnelModel : Identifiable, Codable {
     
-    let id = UUID().uuidString
+    var id = UUID().uuidString
     let date : String
-    let day : Int
-    var personnel : Int
+    let day, personnel : Int
     var pow : Int? = nil
     
-    init(
-        date: String,
-        day: Int,
-        personnel: Int,
-        pow : Int? = nil
-    ) {
+    init(id: String = UUID().uuidString, date: String, day: Int, personnel: Int, pow: Int? = nil) {
+        self.id = id
         self.date = date
         self.day = day
         self.personnel = personnel

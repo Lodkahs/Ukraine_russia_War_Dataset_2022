@@ -7,25 +7,17 @@
 
 import Foundation
 
-struct LossesEquipmentOryxModel : Identifiable {
-    let id = UUID().uuidString
-    let equipmentOryx : String
-    let model : String
-    let manufacturer : String
+struct LossesEquipmentOryxModel : Identifiable, Codable {
+    var id = UUID().uuidString
+    let equipmentOryx, model, manufacturer, equipmentUA : String
     let lossesTotal : Int
-    let equipmentUA : String
 
-    init(
-        equipmentOryx : String,
-        model: String,
-        manufacturer: String,
-        lossesTotal : Int,
-        equipmentUA : String
-    ) {
+    init(id: String = UUID().uuidString, equipmentOryx: String, model: String, manufacturer: String, equipmentUA: String, lossesTotal: Int) {
+        self.id = id
         self.equipmentOryx = equipmentOryx
         self.model = model
         self.manufacturer = manufacturer
-        self.lossesTotal = lossesTotal
         self.equipmentUA = equipmentUA
+        self.lossesTotal = lossesTotal
     }
 }

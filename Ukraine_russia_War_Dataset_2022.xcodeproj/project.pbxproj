@@ -11,11 +11,17 @@
 		499DEEEE2A93529100F9B950 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499DEEED2A93529100F9B950 /* ContentView.swift */; };
 		499DEEF02A93529200F9B950 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 499DEEEF2A93529200F9B950 /* Assets.xcassets */; };
 		499DEEF32A93529200F9B950 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 499DEEF22A93529200F9B950 /* Preview Assets.xcassets */; };
-		49D48ADF2A93618F00D4261D /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D48ADE2A93618F00D4261D /* CalendarView.swift */; };
+		49A8C1F42A93CE30003E3B58 /* russia_losses_equipment_correction.json in Resources */ = {isa = PBXBuildFile; fileRef = 49A8C1F02A93CE30003E3B58 /* russia_losses_equipment_correction.json */; };
+		49A8C1F52A93CE30003E3B58 /* russia_losses_equipment_oryx.json in Resources */ = {isa = PBXBuildFile; fileRef = 49A8C1F12A93CE30003E3B58 /* russia_losses_equipment_oryx.json */; };
+		49A8C1F62A93CE30003E3B58 /* russia_losses_personnel.json in Resources */ = {isa = PBXBuildFile; fileRef = 49A8C1F22A93CE30003E3B58 /* russia_losses_personnel.json */; };
+		49A8C1F72A93CE30003E3B58 /* russia_losses_equipment.json in Resources */ = {isa = PBXBuildFile; fileRef = 49A8C1F32A93CE30003E3B58 /* russia_losses_equipment.json */; };
+		49D48ADF2A93618F00D4261D /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D48ADE2A93618F00D4261D /* DatePickerView.swift */; };
 		49D48AE12A93776200D4261D /* LossesEquipmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D48AE02A93776200D4261D /* LossesEquipmentModel.swift */; };
 		49D48AE32A93777400D4261D /* LossesEquipmentCorrectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D48AE22A93777400D4261D /* LossesEquipmentCorrectionModel.swift */; };
 		49D48AE52A93778A00D4261D /* LossesEquipmentOryxModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D48AE42A93778A00D4261D /* LossesEquipmentOryxModel.swift */; };
 		49D48AE72A93779500D4261D /* LossesPersonnelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D48AE62A93779500D4261D /* LossesPersonnelModel.swift */; };
+		49FDECA12A93B47F009ED23C /* LossesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FDECA02A93B47F009ED23C /* LossesListView.swift */; };
+		49FDECA32A93B586009ED23C /* JSONParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FDECA22A93B586009ED23C /* JSONParsing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,11 +30,17 @@
 		499DEEED2A93529100F9B950 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		499DEEEF2A93529200F9B950 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		499DEEF22A93529200F9B950 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		49D48ADE2A93618F00D4261D /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		49A8C1F02A93CE30003E3B58 /* russia_losses_equipment_correction.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = russia_losses_equipment_correction.json; sourceTree = "<group>"; };
+		49A8C1F12A93CE30003E3B58 /* russia_losses_equipment_oryx.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = russia_losses_equipment_oryx.json; sourceTree = "<group>"; };
+		49A8C1F22A93CE30003E3B58 /* russia_losses_personnel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = russia_losses_personnel.json; sourceTree = "<group>"; };
+		49A8C1F32A93CE30003E3B58 /* russia_losses_equipment.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = russia_losses_equipment.json; sourceTree = "<group>"; };
+		49D48ADE2A93618F00D4261D /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
 		49D48AE02A93776200D4261D /* LossesEquipmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LossesEquipmentModel.swift; sourceTree = "<group>"; };
 		49D48AE22A93777400D4261D /* LossesEquipmentCorrectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LossesEquipmentCorrectionModel.swift; sourceTree = "<group>"; };
 		49D48AE42A93778A00D4261D /* LossesEquipmentOryxModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LossesEquipmentOryxModel.swift; sourceTree = "<group>"; };
 		49D48AE62A93779500D4261D /* LossesPersonnelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LossesPersonnelModel.swift; sourceTree = "<group>"; };
+		49FDECA02A93B47F009ED23C /* LossesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LossesListView.swift; sourceTree = "<group>"; };
+		49FDECA22A93B586009ED23C /* JSONParsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParsing.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,9 +77,11 @@
 				499DEEFA2A93552200F9B950 /* View */,
 				499DEEFB2A93552600F9B950 /* Controller */,
 				499DEEEB2A93529100F9B950 /* Ukraine_russia_War_Dataset_2022App.swift */,
-				499DEEED2A93529100F9B950 /* ContentView.swift */,
-				49D48ADE2A93618F00D4261D /* CalendarView.swift */,
 				499DEEEF2A93529200F9B950 /* Assets.xcassets */,
+				49A8C1F02A93CE30003E3B58 /* russia_losses_equipment_correction.json */,
+				49A8C1F12A93CE30003E3B58 /* russia_losses_equipment_oryx.json */,
+				49A8C1F32A93CE30003E3B58 /* russia_losses_equipment.json */,
+				49A8C1F22A93CE30003E3B58 /* russia_losses_personnel.json */,
 				499DEEF12A93529200F9B950 /* Preview Content */,
 			);
 			path = Ukraine_russia_War_Dataset_2022;
@@ -95,6 +109,9 @@
 		499DEEFA2A93552200F9B950 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				499DEEED2A93529100F9B950 /* ContentView.swift */,
+				49D48ADE2A93618F00D4261D /* DatePickerView.swift */,
+				49FDECA02A93B47F009ED23C /* LossesListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -102,6 +119,7 @@
 		499DEEFB2A93552600F9B950 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				49FDECA22A93B586009ED23C /* JSONParsing.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -164,7 +182,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49A8C1F72A93CE30003E3B58 /* russia_losses_equipment.json in Resources */,
+				49A8C1F52A93CE30003E3B58 /* russia_losses_equipment_oryx.json in Resources */,
+				49A8C1F42A93CE30003E3B58 /* russia_losses_equipment_correction.json in Resources */,
 				499DEEF32A93529200F9B950 /* Preview Assets.xcassets in Resources */,
+				49A8C1F62A93CE30003E3B58 /* russia_losses_personnel.json in Resources */,
 				499DEEF02A93529200F9B950 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -176,13 +198,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49FDECA32A93B586009ED23C /* JSONParsing.swift in Sources */,
 				499DEEEE2A93529100F9B950 /* ContentView.swift in Sources */,
 				49D48AE32A93777400D4261D /* LossesEquipmentCorrectionModel.swift in Sources */,
 				499DEEEC2A93529100F9B950 /* Ukraine_russia_War_Dataset_2022App.swift in Sources */,
-				49D48ADF2A93618F00D4261D /* CalendarView.swift in Sources */,
+				49D48ADF2A93618F00D4261D /* DatePickerView.swift in Sources */,
 				49D48AE72A93779500D4261D /* LossesPersonnelModel.swift in Sources */,
 				49D48AE12A93776200D4261D /* LossesEquipmentModel.swift in Sources */,
 				49D48AE52A93778A00D4261D /* LossesEquipmentOryxModel.swift in Sources */,
+				49FDECA12A93B47F009ED23C /* LossesListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
