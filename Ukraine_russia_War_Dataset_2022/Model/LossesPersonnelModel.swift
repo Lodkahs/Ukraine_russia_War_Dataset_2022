@@ -7,18 +7,22 @@
 
 import Foundation
 
-struct LossesPersonnelModel : Identifiable, Codable {
-    
-    var id = UUID().uuidString
-    let date : String
-    let day, personnel : Int
-    var pow : Int? = nil
-    
-    init(id: String = UUID().uuidString, date: String, day: Int, personnel: Int, pow: Int? = nil) {
-        self.id = id
-        self.date = date
-        self.day = day
-        self.personnel = personnel
-        self.pow = pow
+struct LossesPersonnelModel: Codable, Hashable {
+    let date: String
+    let day, personnel: Int
+    let welcomePersonnel: Personnel
+    let pow: Int?
+
+    enum CodingKeys: String, CodingKey {
+        case date, day, personnel
+        case welcomePersonnel = "personnel*"
+        case pow = "POW"
     }
 }
+
+enum Personnel: String, Codable {
+    case about = "about"
+    case more = "more"
+}
+
+typealias LossesPersonnelModelArray = [LossesPersonnelModel]

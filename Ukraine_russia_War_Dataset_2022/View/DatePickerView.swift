@@ -23,7 +23,7 @@ struct DatePickerView: View {
                 displayedComponents: .date)
                     .tint(Color.yellow)
                     .datePickerStyle(.compact)
-                    .padding(.horizontal, 33)
+                    .padding(.horizontal, 32)
         }
             .padding()
     }

@@ -7,17 +7,43 @@
 
 import Foundation
 
-struct LossesEquipmentOryxModel : Identifiable, Codable {
-    var id = UUID().uuidString
-    let equipmentOryx, model, manufacturer, equipmentUA : String
-    let lossesTotal : Int
+struct LossesEquipmentOryxModel: Codable, Hashable {
+    
+    let equipmentOryx, model: String
+    let manufacturer: Manufacturer
+    let lossesTotal: Int
+    let equipmentUa: EquipmentUa
 
-    init(id: String = UUID().uuidString, equipmentOryx: String, model: String, manufacturer: String, equipmentUA: String, lossesTotal: Int) {
-        self.id = id
-        self.equipmentOryx = equipmentOryx
-        self.model = model
-        self.manufacturer = manufacturer
-        self.equipmentUA = equipmentUA
-        self.lossesTotal = lossesTotal
+    enum CodingKeys: String, CodingKey {
+        case equipmentOryx = "equipment_oryx"
+        case model, manufacturer
+        case lossesTotal = "losses_total"
+        case equipmentUa = "equipment_ua"
     }
 }
+
+enum EquipmentUa: String, Codable {
+    case aircrafts = "Aircrafts"
+    case antiAircraftWarfareSystems = "Anti-aircraft Warfare Systems"
+    case armouredPersonnelCarriers = "Armoured Personnel Carriers"
+    case artillerySystems = "Artillery Systems"
+    case helicopters = "Helicopters"
+    case multipleRocketLaunchers = "Multiple Rocket Launchers"
+    case specialEquipment = "Special Equipment"
+    case tanks = "Tanks"
+    case unmannedAerialVehicles = "Unmanned Aerial Vehicles"
+    case vehicleAndFuelTank = "Vehicle and Fuel Tank"
+    case warshipsBoats = "Warships, Boats"
+}
+
+enum Manufacturer: String, Codable {
+    case iran = "Iran"
+    case israel = "Israel"
+    case italy = "Italy"
+    case poland = "Poland"
+    case russia = "Russia"
+    case theCzechRepublic = "the Czech Republic"
+    case theSovietUnion = "the Soviet Union"
+}
+
+typealias LossesEquipmentOryxModelArray = [LossesEquipmentOryxModel]

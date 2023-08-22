@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @ObservedObject var vm = JSONParsing()
+    //@ObservedObject var vm = JSONParsing()
     
     @State private var selectedDate = Date()
     var body: some View {

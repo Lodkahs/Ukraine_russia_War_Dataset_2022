@@ -11,14 +11,12 @@ struct LossesEquipmentModel: Codable, Hashable {
     let date: String
     let day, aircraft, helicopter, tank: Int
     let apc, fieldArtillery, mrl: Int
-    let drone, navalShip, antiAircraftWarfare: Int
-    
-    //optional
     let militaryAuto, fuelTank: Int?
+    let drone, navalShip, antiAircraftWarfare: Int
     let specialEquipment, mobileSRBMSystem: Int?
     let greatestLossesDirection: String?
     let vehiclesAndFuelTanks, cruiseMissiles: Int?
-    
+
     enum CodingKeys: String, CodingKey {
         case date, day, aircraft, helicopter, tank
         case apc = "APC"
@@ -37,4 +35,4 @@ struct LossesEquipmentModel: Codable, Hashable {
     }
 }
 
-typealias lossesEquipmentModelArray = [LossesEquipmentModel]
+typealias LossesEquipmentModelArray = [LossesEquipmentModel]

@@ -7,37 +7,25 @@
 
 import Foundation
 
-//struct LossesEquipmentModel : Codable, Hashable {
-//    let date: String
-//        let day, aircraft, helicopter, tank: Int
-//        let apc, fieldArtillery, mrl: Int
-//        let drone, navalShip, antiAircraftWarfare: Int
-//    
-//    var militaryAuto : Int? = nil
-//    var fuelTank : Int? = nil
-//
-//    //additional options
-//    var cruiseMissile : Int? = nil
-//    var vehiclesAndFuelTanks : Int? = nil
-//    var specialEquipment : Int? = nil
-//    
-//    //++ options
-//    var mobileSrbmSystem : Int? = nil
-//    var greatestLossesDirection : String? = nil
-//
-//        enum CodingKeys: String, CodingKey {
-//            case date, day, aircraft, helicopter, tank
-//            case apc = "APC"
-//            case fieldArtillery = "field artillery"
-//            case mrl = "MRL"
-//            case militaryAuto = "military auto"
-//            case fuelTank = "fuel tank"
-//            case drone
-//            case navalShip = "naval ship"
-//            case antiAircraftWarfare = "anti-aircraft warfare"
-//            case cruiseMissile = "cruise missiles"
-//            case vehiclesAndFuelTanks = "vehicles and fuel tanks"
-//            case specialEquipment = "special equipment"
-//            case greatestLossesDirection = "greatest losses direction"
-//        }
-//}
+struct LossesEquipmentCorrectionModel: Codable, Hashable {
+    let date: String
+    let day, aircraft, helicopter, tank: Int
+    let apc, fieldArtillery, mrl, drone: Int
+    let navalShip, antiAircraftWarfare, specialEquipment, vehiclesAndFuelTanks: Int
+    let cruiseMissiles: Int
+
+    enum CodingKeys: String, CodingKey {
+        case date, day, aircraft, helicopter, tank
+        case apc = "APC"
+        case fieldArtillery = "field artillery"
+        case mrl = "MRL"
+        case drone
+        case navalShip = "naval ship"
+        case antiAircraftWarfare = "anti-aircraft warfare"
+        case specialEquipment = "special equipment"
+        case vehiclesAndFuelTanks = "vehicles and fuel tanks"
+        case cruiseMissiles = "cruise missiles"
+    }
+}
+
+typealias LossesEquipmentCorrectionModelArray = [LossesEquipmentCorrectionModel]
