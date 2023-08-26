@@ -31,7 +31,7 @@ struct DetailView: View {
             }
         }
         .navigationBarBackButtonHidden(true)
-        .navigationTitle("Losses:")
+        .navigationTitle("🐷🐶 losses during this war:")
         
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
@@ -57,15 +57,17 @@ struct Item : View {
     let equipmentNaming : LossesEquipmentOryxModel
     
     var body: some View {
-        VStack {
-            Text("Manufacturer : \(equipmentNaming.model)")
-            Text("equipmentOryx : \(equipmentNaming.equipmentOryx)")
-            Text("lossesTotal : \(equipmentNaming.lossesTotal)")
-            Text("manufacturer : \(equipmentNaming.manufacturer.rawValue)")
-            Text("equipmentUa : \(equipmentNaming.equipmentUa.rawValue)")
+        VStack(alignment: .leading) {
+            Text("Manufacturer: \(equipmentNaming.model)")
+            Text("Equipment Oryx: \(equipmentNaming.equipmentOryx)")
+            Text("Total losses: \(equipmentNaming.lossesTotal)")
+            Text("Country: \(equipmentNaming.manufacturer.rawValue)")
+            Text("Equipment UA: \(equipmentNaming.equipmentUa.rawValue)")
         }
+        .font(.system(size: 16))
+        .fontWeight(.medium)
         .padding()
-        .border(.black)
+        .border(.white)
         
     }
 }

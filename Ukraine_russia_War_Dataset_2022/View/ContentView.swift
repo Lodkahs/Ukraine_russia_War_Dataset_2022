@@ -14,6 +14,12 @@ protocol Losses : Codable {
 
 struct ContentView: View {
     
+    init() {
+            // Make the navigation bar background completely transparent
+            UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+            UINavigationBar.appearance().shadowImage = UIImage()
+        }
+    
     var body: some View {
         
         ZStack {
@@ -28,15 +34,17 @@ struct ContentView: View {
                 VStack {
                     Text("генеральний штаб зс україни")
                         .foregroundColor(.white)
+                        .textCase(.uppercase)
                     Text("інформує")
                         .foregroundColor(.white)
-                    
+                        .textCase(.uppercase)
                     
                     LossesListView()
                     
                 }
-                .textCase(.uppercase)
+                
                 .font(.title3)
+                .blendMode(.lighten)
                 
                 .padding()
                 

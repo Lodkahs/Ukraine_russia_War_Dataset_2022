@@ -44,7 +44,7 @@ struct LossesListView: View {
     
     var body: some View {
         
-        NavigationView {
+        NavigationStack {
             VStack {
                 DatePicker(
                     "Протягом 24.02.22 - ",
@@ -378,10 +378,11 @@ struct LossesListView: View {
             .tint(.white)
             .navigationBarTitle("", displayMode: .inline)
             //.ignoresSafeArea()
-            .background(.gray)
+
         }
         
     }
+        
 }
 
 struct LossesListView_Previews: PreviewProvider {
@@ -434,14 +435,15 @@ struct RepeatedElement : View {
                     .foregroundColor(.yellow)
                 Text(text4)
                     .foregroundColor(.white)
+                    .frame(alignment: .leading)
             }
             .frame(width: UIScreen.main.bounds.width / 2)
             .padding(.horizontal, 4)
-            .font(.system(size: 16))
+            .font(.system(size: 12))
             
         }
         .padding()
-        .border(.black)
+        .border(.white)
         
     }
 }
