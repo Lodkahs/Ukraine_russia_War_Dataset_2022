@@ -7,7 +7,11 @@
 
 import Foundation
 
-struct LossesEquipmentOryxModel: Codable, Hashable {
+protocol Oryx : Hashable {
+    var model : String { get }
+}
+
+struct LossesEquipmentOryxModel: Codable, Oryx {
 
     let equipmentOryx, model: String
     let manufacturer: Manufacturer

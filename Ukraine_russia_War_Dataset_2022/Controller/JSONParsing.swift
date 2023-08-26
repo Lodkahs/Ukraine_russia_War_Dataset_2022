@@ -22,6 +22,23 @@ func loadJSON(fileName: String) -> Data? {
     return nil
 }
 
+func displayOryxData(data : Data, type: String, oryxArray : inout [LossesEquipmentOryxModel]) {
+    
+    let decoder = JSONDecoder()
+    
+    do {
+        
+        if type == "Oryx" {
+            let oryx = try decoder.decode([LossesEquipmentOryxModel].self, from: data)
+            oryxArray = oryx
+        }
+        
+    } catch let error {
+        print("error: \(error.localizedDescription)")
+    }
+    
+}
+
 func displayJSONData(data: Data, type: String, selectedDate: Date, losses: inout [Losses], selectedLossesOnThisDay: inout [Losses], startingDate: Date) {
     
     let decoder = JSONDecoder()
