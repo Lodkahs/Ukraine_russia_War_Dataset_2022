@@ -7,7 +7,10 @@
 
 import Foundation
 
-struct LossesPersonnelModel: Codable, Hashable {
+struct LossesPersonnelModel: Losses {
+    
+    var tank: Int?
+
     let date: String
     let day, personnel: Int
     let welcomePersonnel: Personnel
@@ -18,6 +21,7 @@ struct LossesPersonnelModel: Codable, Hashable {
         case welcomePersonnel = "personnel*"
         case pow = "POW"
     }
+
 }
 
 enum Personnel: String, Codable {

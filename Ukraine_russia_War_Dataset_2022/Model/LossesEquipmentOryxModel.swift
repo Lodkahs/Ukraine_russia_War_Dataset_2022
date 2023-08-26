@@ -8,7 +8,7 @@
 import Foundation
 
 struct LossesEquipmentOryxModel: Codable, Hashable {
-    
+
     let equipmentOryx, model: String
     let manufacturer: Manufacturer
     let lossesTotal: Int

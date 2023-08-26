@@ -11,8 +11,8 @@ import SwiftUI
 struct Ukraine_russia_War_Dataset_2022App: App {
     var body: some Scene {
         WindowGroup {
-            //ContentView()
-            LossesListView()
+            ContentView()
+            //LossesListView()
         }
     }
 }

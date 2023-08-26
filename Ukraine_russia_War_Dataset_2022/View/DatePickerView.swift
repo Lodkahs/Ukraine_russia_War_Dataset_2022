@@ -12,20 +12,21 @@ struct DatePickerView: View {
     @State private var selectedDate = Date()
     
     let startingDate : Date = Calendar.current.date(from: DateComponents(year: 2022, month: 2, day: 25)) ?? Date()
-    let endingDate : Date = Date()
+    //let endingDate : Date = Date()
     
     var body: some View {
         VStack {
             DatePicker(
                 "Протягом 24.02.22 - ",
                 selection: $selectedDate,
-                in: startingDate...endingDate,
+                in: startingDate...selectedDate,
                 displayedComponents: .date)
                     .tint(Color.yellow)
                     .datePickerStyle(.compact)
                     .padding(.horizontal, 32)
         }
             .padding()
+            .frame(height: 10)
     }
             
 }
@@ -35,4 +36,3 @@ struct DatePickerView_Previews: PreviewProvider {
         DatePickerView()
     }
 }
-

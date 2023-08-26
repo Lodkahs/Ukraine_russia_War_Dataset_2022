@@ -7,30 +7,42 @@
 
 import SwiftUI
 
+protocol Losses : Codable {
+    var date : String { get }
+    var day : Int { get }
+}
+
 struct ContentView: View {
     
-    //@ObservedObject var vm = JSONParsing()
-    
-    @State private var selectedDate = Date()
     var body: some View {
-        ScrollView {
-            VStack {
-                Text("генеральний штаб зс україни")
-                Text("інформує")
-                    .font(.largeTitle)
-            }
-                .textCase(.uppercase)
         
-            DatePickerView()
-                //.padding(.horizontal, 0)
-                .border(.black)
+        ZStack {
+            LinearGradient(
+                gradient: Gradient(colors: [Color(#colorLiteral(red: 0.04541411034, green: 0.08468856293, blue: 0.06666667014, alpha: 1)), Color(#colorLiteral(red: 0.125633069, green: 0.1545227466, blue: 0.05256164966, alpha: 1))]),
+                startPoint: .leading,
+                endPoint: .trailing
+            )
+            .edgesIgnoringSafeArea(.all)
             
-            Text("ОРІЄНТОВНІ ВТРАТИ ПРОТИВНИКА СКЛАЛИ:")
-            
-            LossesListView()
-            
+            VStack {
+                VStack {
+                    Text("генеральний штаб зс україни")
+                        .foregroundColor(.white)
+                    Text("інформує")
+                        .foregroundColor(.white)
+                    
+                    
+                    LossesListView()
+                    
+                }
+                .textCase(.uppercase)
+                .font(.title3)
+                
+                .padding()
+                
+            }
         }
-        .padding()
+        
     }
 }
 

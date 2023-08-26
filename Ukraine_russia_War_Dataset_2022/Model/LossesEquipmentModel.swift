@@ -7,16 +7,27 @@
 
 import Foundation
 
-struct LossesEquipmentModel: Codable, Hashable {
-    let date: String
-    let day, aircraft, helicopter, tank: Int
-    let apc, fieldArtillery, mrl: Int
-    let militaryAuto, fuelTank: Int?
-    let drone, navalShip, antiAircraftWarfare: Int
-    let specialEquipment, mobileSRBMSystem: Int?
-    let greatestLossesDirection: String?
-    let vehiclesAndFuelTanks, cruiseMissiles: Int?
-
+struct LossesEquipmentModel: Losses {
+    var date: String
+    var day: Int
+    var tank: Int
+    var aircraft: Int?
+    var helicopter: Int
+    
+    var apc: Int
+    var fieldArtillery: Int
+    var mrl: Int
+    var militaryAuto: Int?
+    var fuelTank: Int?
+    var drone: Int
+    var navalShip: Int
+    var antiAircraftWarfare: Int
+    var specialEquipment: Int?
+    var mobileSRBMSystem: Int?
+    var greatestLossesDirection: String?
+    var vehiclesAndFuelTanks: Int?
+    var cruiseMissiles: Int?
+    
     enum CodingKeys: String, CodingKey {
         case date, day, aircraft, helicopter, tank
         case apc = "APC"
