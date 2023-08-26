@@ -9,24 +9,30 @@ import SwiftUI
 
 struct DatePickerView: View {
     
-    @State private var selectedDate = Date()
+    @ObservedObject var sharedData = SharedDataForDatePicker()
     
-    let startingDate : Date = Calendar.current.date(from: DateComponents(year: 2022, month: 2, day: 25)) ?? Date()
-    //let endingDate : Date = Date()
+    //@State private var selectedDate = Date()
+    
+//    let startingDate : Date = Calendar.current.date(from: DateComponents(year: 2022, month: 2, day: 25)) ?? Date()
+//    let endingDate : Date = Date()
     
     var body: some View {
         VStack {
             DatePicker(
-                "Протягом 24.02.22 - ",
-                selection: $selectedDate,
-                in: startingDate...selectedDate,
+                "Протягом \n 24.02.22 - ",
+                selection: $sharedData.selectedDate,
+                in: sharedData.dateRange,
                 displayedComponents: .date)
                     .tint(Color.yellow)
                     .datePickerStyle(.compact)
-                    .padding(.horizontal, 32)
+                    //.padding(.horizontal, 32)
+            
+            //Text("\(sharedData.selectedDate)")
+            //Text("\(formattedDate(selectedDate: sharedData.selectedDate))")
         }
             .padding()
-            .frame(height: 10)
+            .frame(maxWidth: .infinity)
+            .frame(height: 90)
     }
             
 }

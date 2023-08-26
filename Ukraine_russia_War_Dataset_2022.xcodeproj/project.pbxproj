@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		495F8FF82A9A201D00C553CF /* SharedDataForDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495F8FF72A9A201D00C553CF /* SharedDataForDatePicker.swift */; };
 		499DEEEC2A93529100F9B950 /* Ukraine_russia_War_Dataset_2022App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499DEEEB2A93529100F9B950 /* Ukraine_russia_War_Dataset_2022App.swift */; };
 		499DEEEE2A93529100F9B950 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499DEEED2A93529100F9B950 /* ContentView.swift */; };
 		499DEEF02A93529200F9B950 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 499DEEEF2A93529200F9B950 /* Assets.xcassets */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		495F8FF72A9A201D00C553CF /* SharedDataForDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedDataForDatePicker.swift; sourceTree = "<group>"; };
 		499DEEE82A93529100F9B950 /* Ukraine_russia_War_Dataset_2022.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ukraine_russia_War_Dataset_2022.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		499DEEEB2A93529100F9B950 /* Ukraine_russia_War_Dataset_2022App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ukraine_russia_War_Dataset_2022App.swift; sourceTree = "<group>"; };
 		499DEEED2A93529100F9B950 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				49FDECA22A93B586009ED23C /* JSONParsing.swift */,
+				495F8FF72A9A201D00C553CF /* SharedDataForDatePicker.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				495F8FF82A9A201D00C553CF /* SharedDataForDatePicker.swift in Sources */,
 				49FDECA32A93B586009ED23C /* JSONParsing.swift in Sources */,
 				499DEEEE2A93529100F9B950 /* ContentView.swift in Sources */,
 				49D48AE32A93777400D4261D /* LossesEquipmentCorrectionModel.swift in Sources */,

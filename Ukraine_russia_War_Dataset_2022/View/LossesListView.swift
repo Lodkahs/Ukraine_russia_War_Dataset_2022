@@ -9,10 +9,7 @@ import SwiftUI
 
 struct LossesListView: View {
     
-    @State private var selectedDate = Date()
-    
-    let startingDate : Date = Calendar.current.date(from: DateComponents(year: 2022, month: 2, day: 25)) ?? Date()
-    let endingDate = Date()
+    @ObservedObject var sharedData = SharedDataForDatePicker()
     
     @State private var isSelectedEquipment : Bool = false
     @State private var isSelectedPersonnel : Bool = false
@@ -46,15 +43,17 @@ struct LossesListView: View {
         
         NavigationStack {
             VStack {
-                DatePicker(
-                    "Протягом 24.02.22 - ",
-                    selection: $selectedDate,
-                    in: startingDate...endingDate,
-                    displayedComponents: .date)
-                .foregroundColor(.white)
-                .colorMultiply(Color.yellow)
-                .datePickerStyle(.compact)
-                .padding(.horizontal, 32)
+//                DatePicker(
+//                    "Протягом 24.02.22 - ",
+//                    selection: $selectedDate,
+//                    in: startingDate...endingDate,
+//                    displayedComponents: .date)
+//                .foregroundColor(.white)
+//                .colorMultiply(Color.yellow)
+//                .datePickerStyle(.compact)
+//                .padding(.horizontal, 32)
+                
+                DatePickerView(sharedData: sharedData)
                 
                 
                 Text("орієнтовні втрати противника:")
@@ -73,37 +72,37 @@ struct LossesListView: View {
                         }
                         
                         if let jsonData = loadJSON(fileName: "russia_losses_equipment") {
-                            displayJSONData(data: jsonData, type: "Equipment", selectedDate: selectedDate, losses: &losses, selectedLossesOnThisDay: &selectedLossesOnThisDay, startingDate: startingDate)
+                            displayJSONData(data: jsonData, type: "Equipment", selectedDate: sharedData.selectedDate, losses: &losses, selectedLossesOnThisDay: &selectedLossesOnThisDay, startingDate: sharedData.startingDate)
                             
-                            lossesTank = calculateDifference(selectedDate: selectedDate, losses: losses, fieldName: "tank")
+                            lossesTank = calculateDifference(selectedDate: sharedData.selectedDate, losses: losses, fieldName: "tank")
                             
-                            lossesAPC = calculateDifference(selectedDate: selectedDate, losses: losses, fieldName: "apc")
+                            lossesAPC = calculateDifference(selectedDate: sharedData.selectedDate, losses: losses, fieldName: "apc")
                             
-                            lossesArtillery = calculateDifference(selectedDate: selectedDate, losses: losses, fieldName: "fieldArtillery")
+                            lossesArtillery = calculateDifference(selectedDate: sharedData.selectedDate, losses: losses, fieldName: "fieldArtillery")
                             
-                            lossesMRL = calculateDifference(selectedDate: selectedDate, losses: losses, fieldName: "mrl")
+                            lossesMRL = calculateDifference(selectedDate: sharedData.selectedDate, losses: losses, fieldName: "mrl")
                             
-                            lossesAntiaircraftSystems = calculateDifference(selectedDate: selectedDate, losses: losses, fieldName: "antiAircraftWarfare")
+                            lossesAntiaircraftSystems = calculateDifference(selectedDate: sharedData.selectedDate, losses: losses, fieldName: "antiAircraftWarfare")
                             
-                            lossesAircraft = calculateDifference(selectedDate: selectedDate, losses: losses, fieldName: "aircraft")
+                            lossesAircraft = calculateDifference(selectedDate: sharedData.selectedDate, losses: losses, fieldName: "aircraft")
                             
-                            lossesHelicopter = calculateDifference(selectedDate: selectedDate, losses: losses, fieldName: "helicopter")
+                            lossesHelicopter = calculateDifference(selectedDate: sharedData.selectedDate, losses: losses, fieldName: "helicopter")
                             
-                            lossesDrone = calculateDifference(selectedDate: selectedDate, losses: losses, fieldName: "drone")
+                            lossesDrone = calculateDifference(selectedDate: sharedData.selectedDate, losses: losses, fieldName: "drone")
                             
-                            lossesCruiseMissiles = calculateDifference(selectedDate: selectedDate, losses: losses, fieldName: "cruiseMissiles")
+                            lossesCruiseMissiles = calculateDifference(selectedDate: sharedData.selectedDate, losses: losses, fieldName: "cruiseMissiles")
                             
-                            lossesNavalShip = calculateDifference(selectedDate: selectedDate, losses: losses, fieldName: "navalShip")
+                            lossesNavalShip = calculateDifference(selectedDate: sharedData.selectedDate, losses: losses, fieldName: "navalShip")
                             
-                            lossesMilitaryAuto = calculateDifference(selectedDate: selectedDate, losses: losses, fieldName: "militaryAuto")
+                            lossesMilitaryAuto = calculateDifference(selectedDate: sharedData.selectedDate, losses: losses, fieldName: "militaryAuto")
                             
-                            lossesFuelTank = calculateDifference(selectedDate: selectedDate, losses: losses, fieldName: "fuelTank")
+                            lossesFuelTank = calculateDifference(selectedDate: sharedData.selectedDate, losses: losses, fieldName: "fuelTank")
                             
-                            lossesVehiclesAndFuelTanks = calculateDifference(selectedDate: selectedDate, losses: losses, fieldName: "vehiclesAndFuelTanks")
+                            lossesVehiclesAndFuelTanks = calculateDifference(selectedDate: sharedData.selectedDate, losses: losses, fieldName: "vehiclesAndFuelTanks")
                             
-                            lossesSpecialEquipment = calculateDifference(selectedDate: selectedDate, losses: losses, fieldName: "specialEquipment")
+                            lossesSpecialEquipment = calculateDifference(selectedDate: sharedData.selectedDate, losses: losses, fieldName: "specialEquipment")
                             
-                            lossesMobileSRBMSystems = calculateDifference(selectedDate: selectedDate, losses: losses, fieldName: "mobileSRBMSystem")
+                            lossesMobileSRBMSystems = calculateDifference(selectedDate: sharedData.selectedDate, losses: losses, fieldName: "mobileSRBMSystem")
                             
                         }
                     } label: {
@@ -121,11 +120,11 @@ struct LossesListView: View {
                             isSelectedEquipment.toggle()
                         }
                         if let jsonData = loadJSON(fileName: "russia_losses_personnel") {
-                            displayJSONData(data: jsonData, type: "Personnel", selectedDate: selectedDate, losses: &losses, selectedLossesOnThisDay: &selectedLossesOnThisDay, startingDate: startingDate)
+                            displayJSONData(data: jsonData, type: "Personnel", selectedDate: sharedData.selectedDate, losses: &losses, selectedLossesOnThisDay: &selectedLossesOnThisDay, startingDate: sharedData.startingDate)
                             
-                            lossesPersonnel = calculateDifference(selectedDate: selectedDate, losses: losses, fieldName: "personnel")
+                            lossesPersonnel = calculateDifference(selectedDate: sharedData.selectedDate, losses: losses, fieldName: "personnel")
                             
-                            lossesPOW = calculateDifference(selectedDate: selectedDate, losses: losses, fieldName: "pow")
+                            lossesPOW = calculateDifference(selectedDate: sharedData.selectedDate, losses: losses, fieldName: "pow")
                         }
                     } label: {
                         Text("Personnel")
@@ -364,7 +363,8 @@ struct LossesListView: View {
                             }
                         }
                     } else {
-                        Text("No data for \(formattedDate(selectedDate: selectedDate))")
+                        Text("No data for \(formattedDate(selectedDate: sharedData.selectedDate))")
+                        //Text("\(sharedData.selectedDate)")
                     }
                     
                 }
@@ -377,7 +377,6 @@ struct LossesListView: View {
             .textCase(.uppercase)
             .tint(.white)
             .navigationBarTitle("", displayMode: .inline)
-            //.ignoresSafeArea()
 
         }
         

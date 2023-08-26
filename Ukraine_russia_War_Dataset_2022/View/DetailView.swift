@@ -16,34 +16,41 @@ struct DetailView: View {
     var item2 : String? = nil
     
     var body: some View {
-        VStack {
-            ScrollView {
-                ForEach(itemFromOryxLosses, id: \.model) { loss in
-                    
-                    if loss.equipmentUa.rawValue == item {
-                        Item(equipmentNaming: loss)
+            VStack {
+                ScrollView {
+                    ForEach(itemFromOryxLosses, id: \.model) { loss in
+                        
+                        if loss.equipmentUa.rawValue == item {
+                            Item(equipmentNaming: loss)
+                        }
+                        if loss.equipmentUa.rawValue == item2 {
+                            Item(equipmentNaming: loss)
+                        }
+                        
                     }
-                    if loss.equipmentUa.rawValue == item2 {
-                        Item(equipmentNaming: loss)
+                }
+                .padding(.horizontal, 14)
+                .frame(maxWidth: .infinity)
+            }
+            
+            .navigationBarBackButtonHidden(true)
+            .navigationTitle("🐷🐶 losses during this war:")
+            
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        dismiss()
+                    } label: {
+                        Image(systemName: "chevron.backward")
+                            .font(.system(size: 16))
+                            .foregroundColor(.yellow)
+                        Text("Back")
+                            .foregroundColor(.yellow)
+                            .font(.system(size: 16))
                     }
-                    
                 }
             }
-        }
-        .navigationBarBackButtonHidden(true)
-        .navigationTitle("🐷🐶 losses during this war:")
-        
-        .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
-                Button {
-                    dismiss()
-                } label: {
-                    Image(systemName: "chevron.backward")
-                    Text("Back")
-                }
-            }
-        }
-        
+            .toolbarBackground(.visible, for: .navigationBar)
     }
 }
 
