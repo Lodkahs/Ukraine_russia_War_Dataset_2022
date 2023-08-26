@@ -11,11 +11,6 @@ struct DatePickerView: View {
     
     @ObservedObject var sharedData = SharedDataForDatePicker()
     
-    //@State private var selectedDate = Date()
-    
-//    let startingDate : Date = Calendar.current.date(from: DateComponents(year: 2022, month: 2, day: 25)) ?? Date()
-//    let endingDate : Date = Date()
-    
     var body: some View {
         VStack {
             DatePicker(
@@ -25,7 +20,6 @@ struct DatePickerView: View {
                 displayedComponents: .date)
                     .tint(Color.yellow)
                     .datePickerStyle(.compact)
-                    //.padding(.horizontal, 32)
             
             //Text("\(sharedData.selectedDate)")
             //Text("\(formattedDate(selectedDate: sharedData.selectedDate))")

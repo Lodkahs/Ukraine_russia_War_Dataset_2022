@@ -30,6 +30,7 @@ struct LossesListView: View {
     @State private var lossesVehiclesAndFuelTanks = 0
     @State private var lossesSpecialEquipment = 0
     @State private var lossesMobileSRBMSystems = 0
+    @State private var greatesLossesDirection : String = ""
     
     //personnel losses
     @State private var lossesPersonnel = 0
@@ -43,15 +44,6 @@ struct LossesListView: View {
         
         NavigationStack {
             VStack {
-//                DatePicker(
-//                    "Протягом 24.02.22 - ",
-//                    selection: $selectedDate,
-//                    in: startingDate...endingDate,
-//                    displayedComponents: .date)
-//                .foregroundColor(.white)
-//                .colorMultiply(Color.yellow)
-//                .datePickerStyle(.compact)
-//                .padding(.horizontal, 32)
                 
                 DatePickerView(sharedData: sharedData)
                 
@@ -203,7 +195,7 @@ struct LossesListView: View {
                                         print("No json data")
                                     }
                                 }
-
+                                
                                 //anti-aircraft warfare systems
                                 NavigationLink {
                                     DetailView(itemFromOryxLosses: oryxArray, item: "Anti-aircraft Warfare Systems")
@@ -265,17 +257,23 @@ struct LossesListView: View {
                                 }
                                 
                                 //cruise missiles
-                                if let missiles = lossesItem.cruiseMissiles {
-                                    if lossesCruiseMissiles > 0 {
-                                        RepeatedElement(text1: "~\(missiles)", text2: "+\(lossesCruiseMissiles)", text3: "крилаті ракети", text4: "cruise missiles")
-                                    } else {
-                                        RepeatedElement(text1: "~\(lossesItem.cruiseMissiles ?? 0)", text2: "", text3: "крилаті ракети", text4: "cruise missiles")
+                                NavigationLink {
+                                    //
+                                } label: {
+                                    if let missiles = lossesItem.cruiseMissiles {
+                                        if lossesCruiseMissiles > 0 {
+                                            RepeatedElement(text1: "~\(missiles)", text2: "+\(lossesCruiseMissiles)", text3: "крилаті ракети", text4: "cruise missiles")
+                                        } else {
+                                            RepeatedElement(text1: "~\(lossesItem.cruiseMissiles ?? 0)", text2: "", text3: "крилаті ракети", text4: "cruise missiles")
+                                        }
                                     }
                                 }
+
+                                
                                 
                                 //warships/boats
                                 NavigationLink {
-                                        DetailView(itemFromOryxLosses: oryxArray, item: "Warships, Boats")
+                                    DetailView(itemFromOryxLosses: oryxArray, item: "Warships, Boats")
                                 } label: {
                                     if lossesNavalShip > 0 {
                                         RepeatedElement(text1: "~\(lossesItem.navalShip)", text2: "+\(lossesNavalShip)", text3: "кораблі/катери", text4: "warships/boats")
@@ -290,7 +288,7 @@ struct LossesListView: View {
                                         print("No json data")
                                     }
                                 }
-
+                                
                                 
                                 
                                 //vehicles & fuel tanks
@@ -318,7 +316,7 @@ struct LossesListView: View {
                                         print("No json data")
                                     }
                                 }
- 
+                                
                                 //special equipment
                                 NavigationLink {
                                     DetailView(itemFromOryxLosses: oryxArray, item: "Special Equipment")
@@ -337,14 +335,26 @@ struct LossesListView: View {
                                     }
                                 }
                                 
-                                //                            if let greatLossesDirection = lossesItem.greatestLossesDirection {
-                                //                                RepeatedElement(text1: "\(lossesItem.greatestLossesDirection ?? "")", text2: "", text3: "greatest losses direction", text4: "")
-                                //                                print("yes")
-                                //                            } else {
-                                //                                Text("no")
-                                //                                print("no")
-                                //                            }
+                                //greates losses direction
+//                                NavigationLink {
+//                                    //
+//                                } label: {
+//                                    if let great = lossesItem.greatestLossesDirection {
+//                                        VStack {
+//                                            Text("\(great)")
+//                                                .foregroundColor(Color.yellow)
+//                                            Text("Greatest losses direction").foregroundColor(Color.white)
+//                                        }
+//                                        .frame(maxWidth: .infinity)
+//                                        .frame(height: 70)
+//                                        .font(.system(size: 16))
+//                                    } else {
+//                                        Text("No data for this date.")
+//                                    }
+//                                }
                                 
+                                
+                                //
                                 
                             } else if let lossesItem = item as? LossesPersonnelModel {
                                 
@@ -369,19 +379,15 @@ struct LossesListView: View {
                     
                 }
                 
-                
-                //}
-                
-                
             }
             .textCase(.uppercase)
             .tint(.white)
             .navigationBarTitle("", displayMode: .inline)
-
+            
         }
         
     }
-        
+    
 }
 
 struct LossesListView_Previews: PreviewProvider {
