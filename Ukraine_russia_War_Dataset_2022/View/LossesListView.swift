@@ -416,17 +416,20 @@ struct RepeatedElement : View {
         HStack(spacing : 4) {
             
             //numbers
-            HStack {
+            HStack(alignment: .bottom) {
                 Text(text2)
-                    .frame(maxWidth: .infinity ,alignment: .trailing)
+                    .frame(maxWidth: .infinity ,alignment: .bottomTrailing)
                     .foregroundColor(.white)
+                    .font(.system(size: 14))
+                    .font(.caption)
                 
                 
                 Text(text1)
                     .frame(maxWidth: .infinity ,alignment: .trailing)
                     .foregroundColor(.yellow)
                     .font(.system(size: 26))
-                    .frame(width: 125)
+                    .frame(width: 110)
+                    .font(.title)
                 
             }
             .frame(width: UIScreen.main.bounds.width / 2)
