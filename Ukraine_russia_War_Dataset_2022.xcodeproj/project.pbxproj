@@ -79,7 +79,7 @@
 		499DEEEA2A93529100F9B950 /* Ukraine_russia_War_Dataset_2022 */ = {
 			isa = PBXGroup;
 			children = (
-				49DA3CDE2A992A9600D4DF51 /* Color+Extensions */,
+				49DA3CDE2A992A9600D4DF51 /* Extensions */,
 				49DA3CDD2A992A5D00D4DF51 /* Resources */,
 				499DEEF92A93551C00F9B950 /* Model */,
 				499DEEFA2A93552200F9B950 /* View */,
@@ -141,12 +141,12 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		49DA3CDE2A992A9600D4DF51 /* Color+Extensions */ = {
+		49DA3CDE2A992A9600D4DF51 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				49DA3CDF2A992AC300D4DF51 /* Color+Extensions.swift */,
 			);
-			path = "Color+Extensions";
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
